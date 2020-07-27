@@ -1,5 +1,11 @@
 #!/bin/bash
 
+printenv > env.log
+
+source ~/.profile
+source ~/.bashrc
+
+printenv
 
 cd ${GRAFANA_HOME} 
 
