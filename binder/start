@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+chmod +x ~/binder/start.influxdb
+chmod +x ~/binder/start.grafana
+chmod +x ~/binder/start.telegraf
+
+mkdir logs
+
+
+~/binder/start.influxdb  	&& \
+~/binder/start.telegraf  	&& \
+~/binder/start.grafana  	&	
+
+
+
+# DO NOT REMOVE(!) 
+# Here is why: https://mybinder.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts
+exec "$@"

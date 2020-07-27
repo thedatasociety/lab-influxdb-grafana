@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Starting influxd"
+
+nohup influxd &> ~/logs/influxdb-$INFLUXDB_VERSION.log &
+
+sleep 5

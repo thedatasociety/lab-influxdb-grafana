@@ -4,16 +4,137 @@
 #          jupyter/jupyterlab extensions/kernels              #
 ###############################################################
 
-# Jupyter/Jupyterlab extension for proxying internal applications
-jupyter serverextension enable --sys-prefix jupyter_server_proxy
-jupyter labextension install jupyterlab-server-proxy --no-build 
+# Beakerx installation 
+# echo "Beakerx install"
+# beakerx install
+# echo "Beakerx extensions install"
+# jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build 
+# jupyter labextension install beakerx-jupyterlab --no-build 
+
 
 # Table of contents Jupyter Lab Extension
+echo "Table of contents Jupyter Lab extension install"
 jupyter labextension install @jupyterlab/toc --no-build 
 
-# Building Jupyter Lab
-jupyter lab build --dev
+# Jupyter/Jupyterlab extension for proxying internal applications
+# echo "Jupyter/Jupyterlab proxy extension install"
+# jupyter serverextension enable --py jupyter_server_proxy
+# jupyter labextension install jupyterlab-server-proxy
+
+
+# Building everything up
+echo "Building everything up (jupyter lab build)"
+# jupyter lab build 
+
 
 ###############################################################
-#          /jupyter/jupyterlab extensions/kernels             #
+#             moving to a local installation folder           #
 ###############################################################
+
+mkdir ~/resources/local
+cd    ~/resources/local
+
+
+###############################################################
+#             influxdb installation commands                    #
+###############################################################
+
+
+export INFLUXDB_VERSION=1.7.7
+echo "export INFLUXDB_VERSION=${INFLUXDB_VERSION}" >> ~/.bashrc
+echo "export INFLUXDB_VERSION=${INFLUXDB_VERSION}" >> ~/.profile
+
+export INFLUXDB_HOME=$(pwd)/influxdb-${INFLUXDB_VERSION}-1
+echo "export INFLUXDB_HOME=${INFLUXDB_HOME}"       >> ~/.bashrc
+echo "export INFLUXDB_HOME=${INFLUXDB_HOME}"       >> ~/.profile
+
+
+# Download and install influxdb server
+wget https://dl.influxdata.com/influxdb/releases/influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz  -q
+tar -zxf influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz >> /dev/null
+rm       influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz 
+# adding bin/ to $path
+echo "export PATH=\$PATH:\$INFLUXDB_HOME/usr/bin"   >> ~/.bashrc
+echo "export PATH=\$PATH:\$INFLUXDB_HOME/usr/bin"   >> ~/.profile
+
+
+
+
+###############################################################
+#             telegraf installation commands                  #
+###############################################################
+
+
+export TELEGRAF_VERSION=1.11.2
+echo "export TELEGRAF_VERSION=${TELEGRAF_VERSION}" >> ~/.bashrc
+echo "export TELEGRAF_VERSION=${TELEGRAF_VERSION}" >> ~/.profile
+
+export TELEGRAF_HOME=$(pwd)/telegraf-${TELEGRAF_VERSION}
+echo "export TELEGRAF_HOME=${TELEGRAF_HOME}"       >> ~/.bashrc
+echo "export TELEGRAF_HOME=${TELEGRAF_HOME}"       >> ~/.profile
+
+
+
+# Download and install telegraf
+wget https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_linux_amd64.tar.gz  -q
+tar -zxf telegraf-${TELEGRAF_VERSION}_linux_amd64.tar.gz >> /dev/null
+mv telegraf telegraf-$TELEGRAF_VERSION
+rm       telegraf-${TELEGRAF_VERSION}_linux_amd64.tar.gz
+# adding bin/ to $path
+echo "export PATH=\$PATH:\$TELEGRAF_HOME/usr/bin"   >> ~/.bashrc
+echo "export PATH=\$PATH:\$TELEGRAF_HOME/usr/bin"   >> ~/.profile
+
+
+
+
+
+
+###############################################################
+#             grafana installation commands                  #
+###############################################################
+
+
+export GRAFANA_VERSION=6.2.5
+echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.bashrc
+echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.profile
+
+export GRAFANA_HOME=$(pwd)/grafana-${GRAFANA_HOME}
+echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.bashrc
+echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.profile
+
+
+
+# Download and install telegraf
+wget https://dl.grafana.com/oss/release/grafana-${GRAFANA_VERSION}.linux-amd64.tar.gz -q 
+tar -zxvf grafana-${GRAFANA_VERSION}.linux-amd64.tar.gz >> /dev/null
+rm        grafana-${GRAFANA_VERSION}.linux-amd64.tar.gz
+# adding bin/ to $path
+echo "export PATH=\$PATH:\$GRAFANA_HOME/bin"   >> ~/.bashrc
+echo "export PATH=\$PATH:\$GRAFANA_HOME/bin"   >> ~/.profile
+
+
+
+###############################################################
+#             vscode installation commands                    #
+###############################################################
+
+
+export CODE_SERVER_VERSION=3.4.1
+echo "export CODE_SERVER_VERSION=${CODE_SERVER_VERSION}" >> ~/.bashrc
+echo "export CODE_SERVER_VERSION=${CODE_SERVER_VERSION}" >> ~/.profile
+
+export CODE_SERVER_HOME=$(pwd)/code-server-${CODE_SERVER_VERSION}
+echo "export CODE_SERVER_HOME=${CODE_SERVER_HOME}"       >> ~/.bashrc
+echo "export CODE_SERVER_HOME=${CODE_SERVER_HOME}"       >> ~/.profile
+
+
+# Download and install VS Code server
+wget -q -O code-server.tar.gz https://github.com/cdr/code-server/releases/download/$CODE_SERVER_VERSION/code-server-$CODE_SERVER_VERSION-linux-x86_64.tar.gz                            
+tar xzf code-server.tar.gz
+mv code-server-${CODE_SERVER_VERSION}-linux-x86_64 code-server-$CODE_SERVER_VERSION
+rm -rf code-server.tar.gz
+
+# adding bin/ to $path
+echo "export PATH=\$PATH:\$CODE_SERVER_HOME/bin"   >> ~/.bashrc
+echo "export PATH=\$PATH:\$CODE_SERVER_HOME/bin"   >> ~/.profile
+

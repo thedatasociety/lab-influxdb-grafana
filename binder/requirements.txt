@@ -1,6 +1,35 @@
 ###############################################################
 #          jupyter/jupyterlab extensions/kernels              #
 ###############################################################
+# beakerx (kernels: java, clojure, groovy, scala, kotlin, sql) and dependencies
+#beakerx
+#py4j
 
+# sos - script of scripts (multiple kernels)
+#sos
+#sos-notebook
+
+# jupyter/jupyterlab extensions
+jupyterlab
 jupyter-server-proxy
 
+#vscode
+numpy
+jupyter-vscode-proxy
+
+
+
+###############################################################
+#          Hadoop                                             #
+###############################################################
+
+mrjob
+google-api-python-client
+
+###############################################################
+#          Spark                                              #
+###############################################################
+
+pyspark
+pprintpp
+findspark
