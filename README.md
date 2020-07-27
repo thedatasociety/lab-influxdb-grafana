@@ -21,7 +21,7 @@
 </div>
 <!-- /ds header -->
 
-# binderhub-grafana
+# lab-influxdb-grafana
 
 A repository for launching [Grafana](https://grafana.com/) with [InfluxDB](https://docs.influxdata.com/influxdb/) (timeseries database) and [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) (metrics collector) on [binderhub](https://github.com/jupyterhub/binderhub) instances.
 
@@ -50,13 +50,13 @@ The list below contains the known [Binderhub](https://github.com/jupyterhub/bind
 The list below provides the badges and the hyperlinks for launching Jupyter Lab in one of the binderhub instances.
 
   
-  - [![launch @ gke.mybinder.org][badge-jupyterlab-gke-mybinder-org]](https://gke.mybinder.org/v2/gh/thedatasociety/binderhub-grafana/master?urlpath=lab)
+  - [![launch @ gke.mybinder.org][badge-jupyterlab-gke-mybinder-org]](https://gke.mybinder.org/v2/gh/thedatasociety/lab-influxdb-grafana/master?urlpath=lab)
 
-  - [![launch @ ovh.mybinder.org][badge-jupyterlab-ovh-mybinder-org]](https://ovh.mybinder.org/v2/gh/thedatasociety/binderhub-grafana/master?urlpath=lab)
+  - [![launch @ ovh.mybinder.org][badge-jupyterlab-ovh-mybinder-org]](https://ovh.mybinder.org/v2/gh/thedatasociety/lab-influxdb-grafana/master?urlpath=lab)
 
-  - [![launch @ gesis.org][badge-jupyterlab-gesis-org]](https://notebooks.gesis.org/binder/v2/gh/thedatasociety/binderhub-grafana/master?urlpath=lab)
+  - [![launch @ gesis.org][badge-jupyterlab-gesis-org]](https://notebooks.gesis.org/binder/v2/gh/thedatasociety/lab-influxdb-grafana/master?urlpath=lab)
 
-  - [![launch @ pangeo.io][badge-jupyterlab-pangeo-io]](https://binder.pangeo.io/v2/gh/thedatasociety/binderhub-grafana/master?urlpath=lab)
+  - [![launch @ pangeo.io][badge-jupyterlab-pangeo-io]](https://binder.pangeo.io/v2/gh/thedatasociety/lab-influxdb-grafana/master?urlpath=lab)
       
 
 ### Launching this repository locally using [repo2docker](https://github.com/jupyter/repo2docker)
@@ -72,7 +72,7 @@ Please also be aware that the `--ip 0.0.0.0` directive will start a sever which 
 ```bash
 repo2docker -p 8888:8888 \
             -v $(echo ~):$(echo ~)/local-home \
-            https://github.com/thedatasociety/binderhub-grafana \
+            https://github.com/thedatasociety/lab-influxdb-grafana \
             jupyter lab --ip 0.0.0.0 --NotebookApp.token='dstoken1234567'
 ```
 
@@ -87,10 +87,10 @@ The Jupyter Lab interface will be available at [http://0.0.0.0:8888/lab](http://
 
 <!-- icons -->
 
-[icon-twitter]:https://raw.githubusercontent.com/thedatasociety/binderhub-grafana/master/resources/images/twitter-icon.png
-[icon-slack]:https://raw.githubusercontent.com/thedatasociety/binderhub-grafana/master/resources/images/slack-icon.png
-[icon-github]:https://raw.githubusercontent.com/thedatasociety/binderhub-grafana/master/resources/images/github-icon.png
-[icon-docker]:https://raw.githubusercontent.com/thedatasociety/binderhub-grafana/master/resources/images/docker-icon.png
+[icon-twitter]:https://raw.githubusercontent.com/thedatasociety/lab-influxdb-grafana/master/resources/images/twitter-icon.png
+[icon-slack]:https://raw.githubusercontent.com/thedatasociety/lab-influxdb-grafana/master/resources/images/slack-icon.png
+[icon-github]:https://raw.githubusercontent.com/thedatasociety/lab-influxdb-grafana/master/resources/images/github-icon.png
+[icon-docker]:https://raw.githubusercontent.com/thedatasociety/lab-influxdb-grafana/master/resources/images/docker-icon.png
 
 <!-- JupyterLab badges -->
 
