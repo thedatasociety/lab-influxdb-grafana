@@ -12,7 +12,7 @@ mkdir logs
 ~/binder/start.telegraf  	&& \
 ~/binder/start.grafana  	&	
 
-
+code-server .  --auth none &
 
 # DO NOT REMOVE(!) 
 # Here is why: https://mybinder.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts
