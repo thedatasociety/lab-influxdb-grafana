@@ -1,3 +1,5 @@
 #!/bin/bash
 
+cd ${GRAFANA_HOME} 
+ls -lha
 nohup grafana-server &> ~/logs/grafana-$GRAFANA_VERSION.log &

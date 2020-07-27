@@ -3,9 +3,6 @@
 
 influx -execute "create database telegraf"
 influx -execute "create user telegraf with password 'telegraf'"
-influx -execute "show databases"
-influx -execute "show users"
-influx -execute "show measurements" -database 'telegraf'
 
 nohup telegraf --config ~/resources/configs/telegraf/telegraf.conf &> ~/logs/telegraf-$TELEGRAF_VERSION.log &
 

@@ -98,7 +98,7 @@ export GRAFANA_VERSION=6.2.5
 echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.bashrc
 echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.profile
 
-export GRAFANA_HOME=$(pwd)/grafana-${GRAFANA_HOME}
+export GRAFANA_HOME=$(pwd)/grafana-${GRAFANA_VERSION}
 echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.bashrc
 echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.profile
 
