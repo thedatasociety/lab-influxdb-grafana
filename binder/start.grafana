@@ -1,23 +1,28 @@
 #!/bin/bash
 
-printenv
-
 cd ${GRAFANA_HOME} 
 
 export PROXY_SUBURL=proxy/3000
 export GF_SECURITY_ADMIN_PASSWORD=thedatasociety 
 
-# if JUPYTERHUB_SERVICE_PREFIX is set, I am on a binderhub instance.
-if [ ! -n $JUPYTERHUB_SERVICE_PREFIX ]; then
-  export GF_SERVER_ROOT_URL="${JUPYTERHUB_SERVICE_PREFIX}${PROXY_SUBURL}" 
-  nohup grafana-server &> ~/logs/grafana-$GRAFANA_VERSION.log &
-else
 
-  # if not in a binderhub, is the JUPYTER_SERVER_URL set? If yes, I can launch grafana. Otherwise, do nothing
-  if [ ! -n $JUPYTER_SERVER_URL ]; then
+if [ -z ${JUPYTERHUB_SERVICE_PREFIX+x} ]; then 
+  echo "JUPYTERHUB_SERVICE_PREFIX is unset"; 
+
+  # Since I am not in a binderhub, is the JUPYTER_SERVER_URL set? If yes, I can launch grafana. Otherwise, do nothing
+  if [ -z ${JUPYTER_SERVER_URL+x} ]; then 
+    echo "JUPYTER_SERVER_URL is unset. Nothing else to do"; 
+  else 
+    echo "JUPYTER_SERVER_URL is set to '$JUPYTER_SERVER_URL'"; 
     export GF_SERVER_ROOT_URL="${JUPYTER_SERVER_URL}${PROXY_SUBURL}" 
     nohup grafana-server &> ~/logs/grafana-$GRAFANA_VERSION.log &
   fi
+
+# Yes, I have the JUPYTERHUB_SERVICE_PREFIX
+else 
+  echo "JUPYTERHUB_SERVICE_PREFIX is set to '$JUPYTERHUB_SERVICE_PREFIX'"; 
+  export GF_SERVER_ROOT_URL="${JUPYTERHUB_SERVICE_PREFIX}${PROXY_SUBURL}" 
+  nohup grafana-server &> ~/logs/grafana-$GRAFANA_VERSION.log & 
 fi
 
 
