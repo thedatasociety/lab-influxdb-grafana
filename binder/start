@@ -7,7 +7,6 @@ chmod +x ~/binder/start.telegraf
 
 mkdir logs
 
-
 ~/binder/start.influxdb  	&& \
 ~/binder/start.telegraf  	&& \
 ~/binder/start.grafana  	&	

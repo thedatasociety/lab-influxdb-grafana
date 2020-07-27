@@ -17,8 +17,8 @@ echo "Table of contents Jupyter Lab extension install"
 jupyter labextension install @jupyterlab/toc --no-build 
 
 # Jupyter/Jupyterlab extension for proxying internal applications
-echo "Jupyter/Jupyterlab proxy extension install"
-jupyter serverextension enable --py jupyter_server_proxy
+# echo "Jupyter/Jupyterlab proxy extension install"
+# jupyter serverextension enable --py jupyter_server_proxy
 # jupyter labextension install jupyterlab-server-proxy
 
 
