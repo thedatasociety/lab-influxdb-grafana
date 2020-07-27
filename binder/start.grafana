@@ -6,8 +6,8 @@ cd ${GRAFANA_HOME}
 export PROXY_SUBURL=proxy/3000
 
 # if JUPYTERHUB_SERVICE_PREFIX do not exist, I am running 127.0.0.1. Else, I am on a binderhub instance.
-if [ -n $GF_SERVER_ROOT_URL ]; then
-  export GF_SERVER_ROOT_URL="127.0.0.1/${PROXY_SUBURL}" 
+if [ -n $JUPYTERHUB_SERVICE_PREFIX ]; then
+  export GF_SERVER_ROOT_URL="${JUPYTER_SERVER_URL}${PROXY_SUBURL}" 
 else
   export GF_SERVER_ROOT_URL="${JUPYTERHUB_SERVICE_PREFIX}${PROXY_SUBURL}" 
 
