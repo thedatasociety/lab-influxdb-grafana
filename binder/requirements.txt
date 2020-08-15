@@ -17,3 +17,8 @@ jupyter-server-proxy
 numpy
 jupyter-vscode-proxy
 
+ipywidgets
+RISE
+paho-mqtt
+pandas
+influxdb

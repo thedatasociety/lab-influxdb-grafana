@@ -13,6 +13,9 @@ printenv > printenv.start
 ~/binder/start.telegraf  	&& \
 ~/binder/start.grafana  	&	
 
+mosquitto   &	
+
+
 code-server .  --auth none &
 
 # DO NOT REMOVE(!) 
