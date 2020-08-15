@@ -3,7 +3,7 @@
 cd ${GRAFANA_HOME} 
 
 export PROXY_SUBURL=proxy/3000
-export GF_SECURITY_ADMIN_PASSWORD=thedatasociety 
+export GF_SECURITY_ADMIN_PASSWORD=admin 
 
 
 if [ -z ${JUPYTERHUB_SERVICE_PREFIX+x} ]; then 
