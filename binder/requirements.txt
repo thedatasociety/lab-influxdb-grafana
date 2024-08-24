@@ -18,7 +18,8 @@ numpy
 jupyter-vscode-proxy
 
 ipywidgets
-RISE
+jupyterlab-rise
+
 paho-mqtt
 pandas
 influxdb

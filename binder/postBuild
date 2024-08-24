@@ -10,13 +10,13 @@
 # echo "Beakerx extensions install"
 # jupyter labextension install beakerx-jupyterlab --no-build 
 
-echo "Ipywidgets Jupyterlab"
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
+# echo "IPywidgets Jupyterlab"
+# jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 
-# Table of contents Jupyter Lab Extension
-echo "Table of contents Jupyter Lab extension install"
-jupyter labextension install @jupyterlab/toc --no-build 
+# # Table of contents Jupyter Lab Extension
+# echo "Table of contents Jupyter Lab extension install"
+# jupyter labextension install @jupyterlab/toc --no-build 
 
 # Jupyter/Jupyterlab extension for proxying internal applications
 # echo "Jupyter/Jupyterlab proxy extension install"

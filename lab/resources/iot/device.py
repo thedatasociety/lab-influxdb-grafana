@@ -29,7 +29,8 @@ class IoT_sensor_consumer(Thread):
         self.broker = broker
         self.port = port
 
-        self.client = paho.Client()                    # create client object
+        # self.client = paho.Client()                    # create client object
+        self.client = paho.Client(paho.CallbackAPIVersion.VERSION1)
         self.client.connect(self.broker, self.port)    # establishing the connection
         self.client.subscribe((topic))            # subscribing to a topic        
         self.client.on_message = self.on_message
@@ -77,8 +78,9 @@ class IoT_mqtt_publisher:
         self.connect()
         
     def connect(self):
-        self.client = paho.Client("publisher{0}".format(random.randint(0,99999999)))
-        
+        # self.client = paho.Client()
+        self.client = paho.Client(paho.CallbackAPIVersion.VERSION1, "publisher{0}".format(random.randint(0,99999999)))
+
         if(not self.client.connect(self.broker, self.port)):                     #establish connection
             print("Connected.")        
         
