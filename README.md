@@ -7,7 +7,7 @@
 <br/>
 <!-- /ds header -->
 
-# Sandbox for learning Graph Databases using Neo4j as an instance
+# Sandbox for learning Timeseries databases using InfluxDB as an instance
 
 This is binderhub-ready repository template for launching specific interfaces on [binderhub](https://github.com/jupyterhub/binderhub) instances while running a MongoDB server.
 
