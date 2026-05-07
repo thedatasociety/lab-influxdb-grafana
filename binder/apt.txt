@@ -6,3 +6,4 @@ wget
 net-tools
 mosquitto
 mosquitto-clients
+zsh

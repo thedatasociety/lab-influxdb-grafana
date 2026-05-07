@@ -26,7 +26,7 @@
 
 # Building everything up
 echo "Building everything up (jupyter lab build)"
-jupyter lab build 
+# jupyter lab build 
 
 
 ###############################################################
@@ -36,31 +36,31 @@ jupyter lab build
 mkdir ~/resources/local
 cd    ~/resources/local
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ###############################################################
-#             influxdb installation commands                    #
+#             influxdb installation commands                  #
 ###############################################################
 
-
-export INFLUXDB_VERSION=1.7.7
+export INFLUXDB_VERSION=3.9.2
 echo "export INFLUXDB_VERSION=${INFLUXDB_VERSION}" >> ~/.bashrc
 echo "export INFLUXDB_VERSION=${INFLUXDB_VERSION}" >> ~/.profile
 
-export INFLUXDB_HOME=$(pwd)/influxdb-${INFLUXDB_VERSION}-1
-echo "export INFLUXDB_HOME=${INFLUXDB_HOME}"       >> ~/.bashrc
-echo "export INFLUXDB_HOME=${INFLUXDB_HOME}"       >> ~/.profile
+export INFLUXDB_HOME=$(pwd)/resources/local/influxdb3-${INFLUXDB_VERSION}-1
+echo "export INFLUXDB3_HOME=${INFLUXDB_HOME}"       >> ~/.bashrc
+echo "export INFLUXDB3_HOME=${INFLUXDB_HOME}"       >> ~/.profile
 
-
-# Download and install influxdb server
-wget https://dl.influxdata.com/influxdb/releases/influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz  -q
-tar -zxf influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz >> /dev/null
-rm       influxdb-${INFLUXDB_VERSION}_linux_amd64.tar.gz 
+# Download and install influxdb3 server
+wget https://dl.influxdata.com/influxdb/releases/influxdb3-core-${INFLUXDB_VERSION}_linux_amd64.tar.gz -q
+tar -zxf influxdb3-core-${INFLUXDB_VERSION}_linux_amd64.tar.gz >> /dev/null
+rm       influxdb3-core-${INFLUXDB_VERSION}_linux_amd64.tar.gz
 # adding bin/ to $path
-echo "export PATH=\$PATH:\$INFLUXDB_HOME/usr/bin"   >> ~/.bashrc
-echo "export PATH=\$PATH:\$INFLUXDB_HOME/usr/bin"   >> ~/.profile
+echo "export PATH=\$PATH:\$INFLUXDB_HOME"   >> ~/.bashrc
+echo "export PATH=\$PATH:\$INFLUXDB_HOME"   >> ~/.profile
 
 
-
+# https://dl.influxdata.com/influxdb/releases/influxdb3-core-3.9.2_linux_amd64.tar.gz
+# https://dl.influxdata.com/influxctl/releases/influxctl-v2.12.0-linux-arm64.tar.gz
 
 ###############################################################
 #             telegraf installation commands                  #
@@ -71,7 +71,7 @@ export TELEGRAF_VERSION=1.11.2
 echo "export TELEGRAF_VERSION=${TELEGRAF_VERSION}" >> ~/.bashrc
 echo "export TELEGRAF_VERSION=${TELEGRAF_VERSION}" >> ~/.profile
 
-export TELEGRAF_HOME=$(pwd)/telegraf-${TELEGRAF_VERSION}
+export TELEGRAF_HOME=$(pwd)/resources/local/telegraf-${TELEGRAF_VERSION}
 echo "export TELEGRAF_HOME=${TELEGRAF_HOME}"       >> ~/.bashrc
 echo "export TELEGRAF_HOME=${TELEGRAF_HOME}"       >> ~/.profile
 
@@ -100,7 +100,7 @@ export GRAFANA_VERSION=6.2.5
 echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.bashrc
 echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.profile
 
-export GRAFANA_HOME=$(pwd)/grafana-${GRAFANA_VERSION}
+export GRAFANA_HOME=$(pwd)/resources/local/grafana-${GRAFANA_VERSION}
 echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.bashrc
 echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.profile
 
@@ -125,7 +125,7 @@ export CODE_SERVER_VERSION=3.4.1
 echo "export CODE_SERVER_VERSION=${CODE_SERVER_VERSION}" >> ~/.bashrc
 echo "export CODE_SERVER_VERSION=${CODE_SERVER_VERSION}" >> ~/.profile
 
-export CODE_SERVER_HOME=$(pwd)/code-server-${CODE_SERVER_VERSION}
+export CODE_SERVER_HOME=$(pwd)/resources/local/code-server-${CODE_SERVER_VERSION}
 echo "export CODE_SERVER_HOME=${CODE_SERVER_HOME}"       >> ~/.bashrc
 echo "export CODE_SERVER_HOME=${CODE_SERVER_HOME}"       >> ~/.profile
 

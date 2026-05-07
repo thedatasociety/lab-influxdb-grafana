@@ -7,7 +7,7 @@ chmod +x ~/binder/start.grafana
 chmod +x ~/binder/start.telegraf
 
 mkdir logs
-printenv > printenv.start
+printenv > logs/printenv.start
 
 ~/binder/start.influxdb  	&& \
 ~/binder/start.telegraf  	&& \
