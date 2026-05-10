@@ -84,19 +84,15 @@ tar -zxf influxctl-v${INFLUXDBCLI_VERSION}-linux-x86_64.tar.gz >> /dev/null
 rm       influxctl-v${INFLUXDBCLI_VERSION}-linux-x86_64.tar.gz
 mv influxctl $(pwd)/influxdb-cli-${INFLUXDBCLI_VERSION}
 
-# adding bin/ to $path
+# Adding bin/ to $path
 echo "export PATH=\$PATH:\$INFLUXDBCLI_HOME"   >> ~/.bashrc
 echo "export PATH=\$PATH:\$INFLUXDBCLI_HOME"   >> ~/.profile
 
-
-# https://dl.influxdata.com/influxdb/releases/influxdb3-core-3.9.2_linux_amd64.tar.gz
-# https://dl.influxdata.com/influxctl/releases/influxctl-v2.12.0-linux-arm64.tar.gz
 ###############################################################
-#             telegraf installation                           #
+#             Telegraf installation                           #
 ###############################################################
 
-
-export TELEGRAF_VERSION=1.11.2
+export TELEGRAF_VERSION=1.38.3
 echo "export TELEGRAF_VERSION=${TELEGRAF_VERSION}" >> ~/.bashrc
 echo "export TELEGRAF_VERSION=${TELEGRAF_VERSION}" >> ~/.profile
 
@@ -104,17 +100,15 @@ export TELEGRAF_HOME=$(pwd)/telegraf-${TELEGRAF_VERSION}
 echo "export TELEGRAF_HOME=${TELEGRAF_HOME}"       >> ~/.bashrc
 echo "export TELEGRAF_HOME=${TELEGRAF_HOME}"       >> ~/.profile
 
-
-
 # Download and install telegraf
 wget https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}_linux_amd64.tar.gz  -q
 tar -zxf telegraf-${TELEGRAF_VERSION}_linux_amd64.tar.gz >> /dev/null
 mv telegraf telegraf-$TELEGRAF_VERSION
 rm       telegraf-${TELEGRAF_VERSION}_linux_amd64.tar.gz
-# adding bin/ to $path
+
+# Adding bin/ to $path
 echo "export PATH=\$PATH:\$TELEGRAF_HOME/usr/bin"   >> ~/.bashrc
 echo "export PATH=\$PATH:\$TELEGRAF_HOME/usr/bin"   >> ~/.profile
-
 
 ###############################################################
 #             MongoDB installation                            #
@@ -135,7 +129,7 @@ tar -xvf mongodb-linux-x86_64-ubuntu2204-${MONGODB_VERSION}.tgz >/dev/null      
 rm       mongodb-linux-x86_64-ubuntu2204-${MONGODB_VERSION}.tgz                                  && \
 mv       mongodb-linux-x86_64-ubuntu2204-${MONGODB_VERSION}        mongodb-${MONGODB_VERSION}      
 
-# adding bin and sbin to $path
+# Adding bin and sbin to $path
 echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.profile
 
@@ -161,18 +155,17 @@ tar -xvf mongosh-${MONGOSH_VERSION}-linux-x64.tgz >/dev/null                    
 rm       mongosh-${MONGOSH_VERSION}-linux-x64.tgz                                       && \
 mv       mongosh-${MONGOSH_VERSION}-linux-x64  mongosh-${MONGOSH_VERSION}      
 
-# adding bin and sbin to $path
+# Adding bin and sbin to $path
 echo "export PATH=\$PATH:\$MONGOSH_HOME/bin"  >> ~/.bashrc
 echo "export PATH=\$PATH:\$MONGOSH_HOME/bin"  >> ~/.profile
 
 echo "Finished installing MongoSH!"
 
 ###############################################################
-#             grafana installation                           #
+#             Grafana installation                           #
 ###############################################################
 
-
-export GRAFANA_VERSION=6.2.5
+export GRAFANA_VERSION=13.0.1
 echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.bashrc
 echo "export GRAFANA_VERSION=${GRAFANA_VERSION}" >> ~/.profile
 
@@ -180,22 +173,19 @@ export GRAFANA_HOME=$(pwd)/grafana-${GRAFANA_VERSION}
 echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.bashrc
 echo "export GRAFANA_HOME=${GRAFANA_HOME}"       >> ~/.profile
 
-
-
 # Download and install telegraf
-wget https://dl.grafana.com/oss/release/grafana-${GRAFANA_VERSION}.linux-amd64.tar.gz -q 
-tar -zxvf grafana-${GRAFANA_VERSION}.linux-amd64.tar.gz >> /dev/null
-rm        grafana-${GRAFANA_VERSION}.linux-amd64.tar.gz
-# adding bin/ to $path
+wget https://dl.grafana.com/grafana/release/13.0.1/grafana_13.0.1_24542347077_linux_amd64.tar.gz  -q 
+     
+tar -zxvf grafana_${GRAFANA_VERSION}_24542347077_linux_amd64.tar.gz >> /dev/null
+rm        grafana_${GRAFANA_VERSION}_24542347077_linux_amd64.tar.gz
+
+# Adding bin/ to $path
 echo "export PATH=\$PATH:\$GRAFANA_HOME/bin"   >> ~/.bashrc
 echo "export PATH=\$PATH:\$GRAFANA_HOME/bin"   >> ~/.profile
-
-
 
 ###############################################################
 #             vscode installation                             #
 ###############################################################
-
 
 export CODE_SERVER_VERSION=3.4.1
 echo "export CODE_SERVER_VERSION=${CODE_SERVER_VERSION}" >> ~/.bashrc
@@ -212,7 +202,7 @@ tar xzf code-server.tar.gz
 mv code-server-${CODE_SERVER_VERSION}-linux-x86_64 code-server-$CODE_SERVER_VERSION
 rm -rf code-server.tar.gz
 
-# adding bin/ to $path
+# Adding bin/ to $path
 echo "export PATH=\$PATH:\$CODE_SERVER_HOME/bin"   >> ~/.bashrc
 echo "export PATH=\$PATH:\$CODE_SERVER_HOME/bin"   >> ~/.profile
 
