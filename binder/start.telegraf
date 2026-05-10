@@ -1,8 +1,7 @@
 #!/bin/bash
 
 
-influx -execute "create database telegraf"
-influx -execute "create user telegraf with password 'telegraf'"
+influxdb3 create database telegraf
 
 nohup telegraf --config ~/resources/configs/telegraf/telegraf.conf &> ~/logs/telegraf-$TELEGRAF_VERSION.log &
 

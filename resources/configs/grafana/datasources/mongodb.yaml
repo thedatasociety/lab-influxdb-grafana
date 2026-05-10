@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: MongoDB
+    type: haohanyang-mongodb-datasource
+    access: proxy
+    jsonData:
+      # Nome do banco de dados que você quer consultar por padrão
+      database: timeseries_db 
+      uir: localhost:27017
+    editable: true

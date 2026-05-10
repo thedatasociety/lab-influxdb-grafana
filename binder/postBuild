@@ -206,3 +206,18 @@ rm -rf code-server.tar.gz
 echo "export PATH=\$PATH:\$CODE_SERVER_HOME/bin"   >> ~/.bashrc
 echo "export PATH=\$PATH:\$CODE_SERVER_HOME/bin"   >> ~/.profile
 
+###############################################################
+#             mongo-express installation                      #
+###############################################################
+
+echo "Installing Mongo Express..."
+cd    ~/resources/local
+mkdir mongo-express
+cd mongo-express
+npm install mongo-express@1.0.0
+
+export MONGO_EXPRESS_HOME=$(pwd)/node_modules/mongo-express 
+echo "export MONGO_EXPRESS_HOME=${MONGO_EXPRESS_HOME}"       >> ~/.bashrc
+echo "export MONGO_EXPRESS_HOME=${MONGO_EXPRESS_HOME}"       >> ~/.profile
+echo "export PATH=\$PATH:\$MONGO_EXPRESS_HOME/bin"   >> ~/.bashrc
+echo "export PATH=\$PATH:\$MONGO_EXPRESS_HOME/bin"   >> ~/.profile

@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: "InfluxDB - Telegraf [InfluxQL]" 
+    type: influxdb
+    access: proxy
+    database: telegraf
+    url: http://localhost:8181      # URL padrão do InfluxDB local
+    jsonData:
+      version: InfluxQL                 # Ou 'InfluxQL' dependendo da linguagem de query que preferir
+    editable: true

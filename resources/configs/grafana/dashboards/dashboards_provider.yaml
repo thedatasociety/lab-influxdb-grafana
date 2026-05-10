@@ -1,0 +1,17 @@
+# apiVersion: 1
+
+# providers:
+#   - name: 'Meus Dashboards Locais'
+#     orgId: 1
+#     folder: ''
+#     type: file
+#     disableDeletion: false
+#     updateIntervalSeconds: 10
+#     options:
+#       path: ./
+    
+#     # MAPEAMENTO AUTOMÁTICO DO DATASOURCE:
+#     # inputs:
+#     #   - name: DS_INFLUXDB
+#     #     type: datasource
+#     #     value: InfluxDB     # Nome do datasource configurado no seu influxdb.yaml
