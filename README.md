@@ -59,15 +59,15 @@ Understanding both gives you the flexibility to choose the right tool for each u
   <img src="https://img.shields.io/badge/_launch_JupyterLab-@_mybinder.org-blue?logo=jupyter" alt="Launch JupyterLab on mybinder.org">
 </a><br/><br/>
 
-<a href="https:2i2c.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=lab" target="_blank">
+<a href="https://2i2c.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=lab" target="_blank">
   <img src="https://img.shields.io/badge/_launch_JupyterLab-@_2i2c.mybinder.org-blue?logo=jupyter" alt="Launch JupyterLab on 2i2c.mybinder.org">
 </a><br/><br/>
 
-<a href="https:bids.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=lab" target="_blank">
+<a href="https://bids.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=lab" target="_blank">
   <img src="https://img.shields.io/badge/_launch_JupyterLab-@_bids.mybinder.org-blue?logo=jupyter" alt="Launch JupyterLab on bids.mybinder.org">
 </a><br/><br/>
 
-<a href="https:gesis.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=lab" target="_blank">
+<a href="https://gesis.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=lab" target="_blank">
   <img src="https://img.shields.io/badge/_launch_JupyterLab-@_gesis.mybinder.org-blue?logo=jupyter" alt="Launch JupyterLab on gesis.mybinder.org">
 </a><br/><br/>
 
@@ -77,15 +77,15 @@ Understanding both gives you the flexibility to choose the right tool for each u
   <img src="https://img.shields.io/badge/_launch_VSCode-@_mybinder.org-blue?logo=vscodium" alt="Launch VSCode on mybinder.org">
 </a><br/><br/>
 
-<a href="https:2i2c.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=vscode/" target="_blank">
+<a href="https://2i2c.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=vscode/" target="_blank">
   <img src="https://img.shields.io/badge/_launch_VSCode-@_2i2c.mybinder.org-blue?logo=vscodium" alt="Launch VSCode on 2i2c.mybinder.org">
 </a><br/><br/>
 
-<a href="https:bids.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=vscode/" target="_blank">
+<a href="https://bids.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=vscode/" target="_blank">
   <img src="https://img.shields.io/badge/_launch_VSCode-@_bids.mybinder.org-blue?logo=vscodium" alt="Launch VSCode on bids.mybinder.org">
 </a><br/><br/>
 
-<a href="https:gesis.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=vscode/" target="_blank">
+<a href="https://gesis.mybinder.org/v2/gh/thedatasociety/lab-timeseries-dbs/master?urlpath=vscode/" target="_blank">
   <img src="https://img.shields.io/badge/_launch_VSCode-@_gesis.mybinder.org-blue?logo=vscodium" alt="Launch VSCode on gesis.mybinder.org">
 </a><br/><br/>
 
