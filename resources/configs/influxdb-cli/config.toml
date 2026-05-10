@@ -1,0 +1,10 @@
+[[profile]]
+  
+    name = "LOCALHOST"
+    product = "dedicated"
+
+
+    host = "127.0.0.1"
+
+    database = "example"
+    # token = ""

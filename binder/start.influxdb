@@ -1,7 +1,10 @@
 #!/bin/bash
 
+mkdir -p ~/.config/influxctl
+cp  ~/resources/configs/influxdb-cli/* ~/.config/influxctl/
+
 echo "Starting influxd"
 
-nohup influxd &> ~/logs/influxdb-$INFLUXDB_VERSION.log &
+nohup influxdb3 serve  --without-auth --node-id node-localhost &> ~/logs/influxdb-$INFLUXDB_VERSION.log &
 
 sleep 5
