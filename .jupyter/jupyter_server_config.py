@@ -11,18 +11,24 @@ c.ServerProxy.servers = {
         'command': [
             'grafana',
             'server',            
-            '--homepath', GRAFANA_PATH,
-            '--config', '', 
-            f'cfg:default.server.http_port={GRAFANA_PORT}',
-            'cfg:default.server.root_url={base_url}grafana/',
-            'cfg:default.server.serve_from_sub_path=true',
+            '--homepath', GRAFANA_PATH
         ],
         'port': GRAFANA_PORT,
-        'timeout': 30,
+        'timeout': 30,        
+        'environment': {
+            'GF_SERVER_HTTP_PORT': str(GRAFANA_PORT),
+            'GF_SERVER_ROOT_URL': '{base_url}grafana/',
+            'GF_SERVER_SERVE_FROM_SUB_PATH': 'true',
+            'GF_SERVER_ENFORCE_DOMAIN': 'false',
+            'GF_SECURITY_ALLOW_EMBEDDING': 'true'
+        },
+        
+        # Garante que o Jupyter não tente adivinhar e duplicar os redirecionamentos
+        'absolute_url': True,
+        
         'launcher_entry': {
             'title': 'Grafana',
-            # Usando a variável de caminho para o ícone também
-            'icon_path': os.path.join(GRAFANA_PATH, 'public/img/fav32.png'),
+            'icon_path': os.path.join(GRAFANA_PATH, 'public/img/fav32.png') if GRAFANA_PATH else None,
         }
     }
 }
