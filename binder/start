@@ -1,22 +1,31 @@
 #!/bin/bash
 
+mkdir logs
 
+echo "Installing Mongo Express..."
+npm install -g mongo-express
+
+echo "Starting Mongo Express on port 8081..."
+PORT=8081 mongo-express --url mongodb://localhost:27017 > ~/logs/mongo-express.log 2>&1 &
 
 chmod +x ~/binder/start.influxdb
 chmod +x ~/binder/start.grafana
 chmod +x ~/binder/start.telegraf
+chmod +x ~/binder/start.mongodb 
 
-mkdir logs
 printenv > logs/printenv.start
 
 ~/binder/start.influxdb  	&& \
 ~/binder/start.telegraf  	&& \
+~/binder/start.mongodb  	&& \
 ~/binder/start.grafana  	&	
 
 mosquitto   &	
 
+export SHELL=/usr/bin/zsh
 
 code-server .  --auth none &
+
 
 # DO NOT REMOVE(!) 
 # Here is why: https://mybinder.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts

@@ -7,3 +7,5 @@ net-tools
 mosquitto
 mosquitto-clients
 zsh
+nodejs
+npm

@@ -117,7 +117,7 @@ echo "export PATH=\$PATH:\$TELEGRAF_HOME/usr/bin"   >> ~/.profile
 
 
 ###############################################################
-#             MongoDB installation commands                   #
+#             MongoDB installation                            #
 ###############################################################
 
 echo "Installing MongoDB..."
@@ -142,7 +142,30 @@ echo "export PATH=\$PATH:\$MONGODB_HOME/bin"  >> ~/.profile
 echo "Finished installing MongoDB!"
 
 
+###############################################################
+#             MongoSH CLI installation                        #
+###############################################################
 
+echo "Installing MongoSH..."
+
+export MONGOSH_VERSION=2.8.3
+echo "export MONGOSH_VERSION=${MONGOSH_VERSION}" >> ~/.bashrc
+echo "export MONGOSH_VERSION=${MONGOSH_VERSION}" >> ~/.profile
+
+export MONGOSH_HOME=$(pwd)/mongosh-${MONGOSH_VERSION}
+echo "export MONGOSH_HOME=${MONGOSH_HOME}"       >> ~/.bashrc
+echo "export MONGOSH_HOME=${MONGOSH_HOME}"       >> ~/.profile
+
+wget  https://downloads.mongodb.com/compass/mongosh-${MONGOSH_VERSION}-linux-x64.tgz -q && \
+tar -xvf mongosh-${MONGOSH_VERSION}-linux-x64.tgz >/dev/null                            && \
+rm       mongosh-${MONGOSH_VERSION}-linux-x64.tgz                                       && \
+mv       mongosh-${MONGOSH_VERSION}-linux-x64  mongosh-${MONGOSH_VERSION}      
+
+# adding bin and sbin to $path
+echo "export PATH=\$PATH:\$MONGOSH_HOME/bin"  >> ~/.bashrc
+echo "export PATH=\$PATH:\$MONGOSH_HOME/bin"  >> ~/.profile
+
+echo "Finished installing MongoSH!"
 
 ###############################################################
 #             grafana installation                           #

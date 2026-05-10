@@ -13,12 +13,11 @@
 jupyterlab
 jupyter-server-proxy
 
-#vscode
+# vscode for jupyter
 numpy
 jupyter-vscode-proxy
 
 ipywidgets
-jupyterlab-rise
 
 paho-mqtt
 pandas

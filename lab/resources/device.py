@@ -4,8 +4,6 @@ from threading import Thread
 import ipywidgets as widgets
 import time
 import random 
-from IPython.display import clear_output
-from IPython.core.display import display, HTML
 import json
 from dateutil import tz                                    
 from threading import Thread
@@ -43,13 +41,12 @@ class IoTSensorConsumer():
             payload_str = str(msg.payload.decode("utf-8"))
             payload = json.loads(payload_str)
             
+            self.ui_queue.put(payload)
+                        
             point = Point("cliente_a").tag("sensor_id", payload['name'])\
                                       .field(payload['body']['dimension'],\
                                              float("{:.2f}".format(payload['body']['value'])))
             self.influx_client.write(point)        
-            
-            # Em vez de mexer nos widgets aqui, dados vão para a fila
-            self.ui_queue.put(payload)
             
         except Exception as e:
             print(f"Erro no processamento MQTT: {e}")

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir ${MONGODB_HOME}/data/db -p
+nohup  ${MONGODB_HOME}/bin/mongod   --dbpath ${MONGODB_HOME}/data/db  &> ~/logs/mongodb-$MONGODB_VERSION.log &
+
+
